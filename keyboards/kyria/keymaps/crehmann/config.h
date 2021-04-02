@@ -50,12 +50,13 @@
 // Apply the modifier on keys that are tapped during a short hold of a modtap
 #define PERMISSIVE_HOLD
 
-// Allows to use either side as the master. Look at the documentation for info:
-// https://docs.qmk.fm/#/config_options?id=setting-handedness
-#define EE_HANDS
+// Use the right side as master (using the trackpoit on the right side)
+#define MASTER_RIGHT
 
 // Allows media codes to properly register in macros and rotary encoder code
 #define TAP_CODE_DELAY 10
+
+#define DYNAMIC_MACRO_USER_CALL
 
 // For PS2 Trackpoint
 #ifdef PS2_USE_INT
