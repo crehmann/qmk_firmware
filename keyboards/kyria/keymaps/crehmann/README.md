@@ -5,11 +5,11 @@ This is my personal keymap for Kyria with some mods. It is inspired by [Miryoku]
 
 ### TrackPoint
 
-I am using a ThinkPad TrackPoint on the right halve (master).The controller board is attached to the OLED sockets and the PCB of the Trackpoint is mounted on the bottom of the keyboard. I am using a labret cheek piercing instead the red rubber nibble and it goes through the puck hole in the PCB.
+I am using a ThinkPad TrackPoint on the right halve (master).The controller board is attached to the OLED sockets and the PCB of the Trackpoint is mounted on the bottom of the keyboard. I am using a labret cheek piercing it goes through the puck hole in the PCB. Long time usage was not comfortable enough so I glued a red TrackPoint dome on top.
 
 | <img src="https://github.com/crehmann/qmk_firmware/raw/crehmann_kyria/keyboards/kyria/keymaps/crehmann/assets/img002.jpeg" style="zoom:50%;" /> | <img src="https://github.com/crehmann/qmk_firmware/raw/crehmann_kyria/keyboards/kyria/keymaps/crehmann/assets/img001.jpeg" style="zoom:50%;" /> |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="https://github.com/crehmann/qmk_firmware/raw/crehmann_kyria/keyboards/kyria/keymaps/crehmann/assets/img004.jpeg" style="zoom:50%;" /> |                                                              |
+| <img src="https://github.com/crehmann/qmk_firmware/raw/crehmann_kyria/keyboards/kyria/keymaps/crehmann/assets/img004.jpeg" style="zoom:50%;" /> | <img src="https://github.com/crehmann/qmk_firmware/raw/crehmann_kyria/keyboards/kyria/keymaps/crehmann/assets/img005.jpg" style="zoom:50%;" /> |
 
 ### Build
 

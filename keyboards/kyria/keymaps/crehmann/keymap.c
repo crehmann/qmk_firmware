@@ -18,12 +18,12 @@
 #define RALT_X RALT_T(KC_X)
 #define GUI_A LGUI_T(KC_A)
 #define ALT_S LALT_T(KC_S)
-#define SFT_D LSFT_T(KC_D)
-#define CTL_F LCTL_T(KC_F)
+#define CTL_D LCTL_T(KC_D)
+#define SFT_F LSFT_T(KC_F)
 
 // Right-hand home row mods
-#define CTL_J RCTL_T(KC_J)
-#define SFT_K RSFT_T(KC_K)
+#define SFT_J RSFT_T(KC_J)
+#define CTL_K RCTL_T(KC_K)
 #define ALT_L LALT_T(KC_L)
 #define GUI_ODI RGUI_T(CH_ODIA)
 #define RALT_DT RALT_T(KC_DOT)
@@ -36,7 +36,7 @@
 #define UC_REDO LCTL(CH_Y)
 
 // Thumbcluster
-#define UC_TL1 LT(MOUR, KC_ESC)
+#define UC_TL1 KC_ESC
 #define UC_TL2 LT(NAVR, KC_SPC)
 #define UC_TL3 LT(NUMR, KC_TAB)
 
@@ -47,7 +47,6 @@
 enum layers {
     BASE = 0,
     NAVR,
-    MOUR,
     NUMR,
     FUNL,
     SYMB,
@@ -70,18 +69,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //  * |      |  Q   |  W   |  E   |  R   |  T   |                              | CH_Z |  U   |  I   |  O   |  P   |      |
 //  * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
 //  * |      |  A   |  S   |  D   |  F   |  G   |                              |  H   |  J   |  K   |  L   | ö  é |      |
-//  * |      | GUI  | LALT | LSFT | LCTL |      |                              |      | LCTL | LSFT | LALT | GUI  |      |
+//  * |      | GUI  | LALT | LCTL | LSFT |      |                              |      | LSFT | LCTL | LALT | GUI  |      |
 //  * |------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+------|
 //  * |      | CH_Y |  X   |  C   |  V   |  B   |      |      |  | Lead |      |  N   |  M   | ,  ; | .  : | -  _ |      |
 //  * |      |      | ALGR |      |      |      |                              |      |      |      | ALGR |      |      |
 //  * `--------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
 //  *                      |      |      | ESC  | SPC  | TAB  |  | BSPC | ENT  | BTN1 |      |      |
-//  *                      |      |      | MOUR | NAVR | NUMR |  | FUNL | SYMB |      |      |      |
+//  *                      |      |      |      | NAVR | NUMR |  | FUNL | SYMB |      |      |      |
 //  *                      `----------------------------------'  `----------------------------------'
 //  */
      [BASE] = LAYOUT(
        _______, KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                                       CH_Z   , KC_U   , KC_I   , KC_O   , KC_P   , _______,
-       _______, GUI_A  , ALT_S  , SFT_D  , CTL_F  , KC_G   ,                                       KC_H   , CTL_J  , SFT_K  , ALT_L  , GUI_ODI, _______,
+       _______, GUI_A  , ALT_S  , CTL_D  , SFT_F  , KC_G   ,                                       KC_H   , SFT_J  , CTL_K  , ALT_L  , GUI_ODI, _______,
        _______, CH_Y   , RALT_X , KC_C   , KC_V   , KC_B   , _______, _______,   KC_LEAD, _______, KC_N   , KC_M   , KC_COMM, RALT_DT, CH_MINS, _______,
                                   _______, _______, UC_TL1 , UC_TL2 , UC_TL3 ,   UC_TR3, UC_TR2 , UC_TR1, _______ , _______
      ),
@@ -90,40 +89,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //  * Navigation Layer (Right):
 //  *
 //  * ,-----------------------------------------.                              ,-----------------------------------------.
-//  * |      |      |      |      |      |      |                              | UNDO | REDO | WH_U | WH_D | CAPS |      |
+//  * |      |      |      |      |      |      |                              | UNDO | REDO | PGUP | PGDN | CAPS |      |
 //  * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
 //  * |      |      |      |      |      |      |                              | INS  | LEFT |  UP  | DOWN | RGHT |      |
 //  * |------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+------|
-//  * |      |      |      |      |      |      |      |      |  |      |      | REC  | HOME | PGUP | PGDN | END  |      |
+//  * |      |      |      |      |      |      |      |      |  |      |      | REC  | HOME | WH_U | WH_D | END  |      |
 //  * `--------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
-//  *                      |      |      |      |      |      |  | BSPC | ENT  | DEL  |      |      |
+//  *                      |      |      |      |      |      |  | BSPC | ENT  | BTN2 |      |      |
 //  *                      `----------------------------------'  `----------------------------------'
 //  */
      [NAVR] = LAYOUT(
-       _______, _______, _______, _______, _______, _______,                                       UC_UNDO, UC_REDO, KC_WH_U, KC_WH_D, KC_CAPS, _______,
+       _______, _______, _______, _______, _______, _______,                                       UC_UNDO, UC_REDO, KC_PGUP, KC_PGDN, KC_CAPS, _______,
        _______, _______, _______, _______, _______, _______,                                       KC_INS , KC_LEFT, KC_UP  , KC_DOWN, KC_RGHT, _______,
-       _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, UC_REC , KC_HOME, KC_PGUP, KC_PGDN, KC_END , _______,
-                                  _______, _______, _______, _______, _______,   KC_BSPC, KC_ENT , KC_DEL , _______ , _______
-     ),
-
-// /*
-//  * Mouse Layer (Right)
-//  *
-//  * ,-----------------------------------------.                              ,-----------------------------------------.
-//  * |      |      |      |      |      |      |                              |      |      | WH_U | WH_D |      |      |
-//  * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
-//  * |      |      |      |      |      |      |                              |      |      | BTN3 | BTN2 |      |      |
-//  * |------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+------|
-//  * |      |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |      |
-//  * `--------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
-//  *                      |      |      |      |      |      |  |      |      | BTN1 |      |      |
-//  *                      `----------------------------------'  `----------------------------------'
-//  */
-     [MOUR] = LAYOUT(
-       _______, _______, _______, _______, _______, _______,                                       _______, _______, KC_WH_U, KC_WH_D, _______, _______,
-       _______, _______, _______, _______, _______, _______,                                       _______, _______, KC_BTN3, KC_BTN2, _______, _______,
-       _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______, _______, _______, _______, _______, _______,
-                                  _______, _______, _______, _______, _______,  _______, _______ , KC_BTN1, _______, _______
+       _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, UC_REC , KC_HOME, KC_WH_U, KC_WH_D, KC_END , _______,
+                                  _______, _______, _______, _______, _______,   KC_BSPC, KC_ENT , KC_BTN2, _______ , _______
      ),
 
 // /*
@@ -136,14 +115,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //  * |------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+------|
 //  * |      |      |      |      |      |      |      |      |  |      |      |      | 1  + | 2  " | 3  * | .  : |      |
 //  * `--------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
-//  *                      |      |      |      |      |      |  | BSPC | ENT  | 0  = |      |      |
+//  *                      |      |      |      |      |      |  | DEL  | ENT  | 0  = |      |      |
 //  *                      `----------------------------------'  `----------------------------------'
 //  */
      [NUMR] = LAYOUT(
        _______, _______, _______, _______, _______, _______,                                       _______, KC_7   , KC_8   , KC_9   , _______, _______,
        _______, _______, _______, _______, _______, _______,                                       _______, KC_4   , KC_5   , KC_6   , CH_PLUS, _______,
        _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______, KC_1   , KC_2   , KC_3   , KC_DOT , _______,
-                                  _______, _______, _______, _______, _______,   KC_BSPC, KC_ENT , KC_0   , _______, _______
+                                  _______, _______, _______, _______, _______,   KC_DEL , KC_ENT , KC_0   , _______, _______
      ),
 
 // /*
@@ -296,6 +275,21 @@ void matrix_scan_user(void) {
     }
 }
 
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case GUI_A:
+            return TAPPING_TERM + 150;
+        case ALT_S:
+            return TAPPING_TERM + 50;
+        case ALT_L:
+            return TAPPING_TERM + 50;
+        case GUI_ODI:
+            return TAPPING_TERM + 150;
+        default:
+            return TAPPING_TERM;
+    }
+}
+
 #ifdef OLED_DRIVER_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 	return OLED_ROTATION_180;
@@ -323,9 +317,6 @@ static void render_status(void) {
             break;
         case NAVR:
             oled_write_P(PSTR("Nav (R)\n"), false);
-            break;
-        case MOUR:
-            oled_write_P(PSTR("Mouse (R)\n"), false);
             break;
         case NUMR:
             oled_write_P(PSTR("Numpad (R)\n"), false);
@@ -381,16 +372,20 @@ void encoder_update_user(uint8_t index, bool clockwise) {
                 break;
             case SYMB:
                 if (clockwise) {
-                    tap_code(KC_VOLD);
+                    tap_code(KC_LEFT);
                 } else {
-                    tap_code(KC_VOLU);
+                    tap_code(KC_RIGHT);
                 }
                 break;
             default: // left/right
                 if (clockwise) {
-                    tap_code(KC_LEFT);
+                    tap_code(KC_WH_U);
+                    tap_code(KC_WH_U);
+                    tap_code(KC_WH_U);
                 } else {
-                    tap_code(KC_RIGHT);
+                    tap_code(KC_WH_D);
+                    tap_code(KC_WH_D);
+                    tap_code(KC_WH_D);
                 }
                 break;
         }
